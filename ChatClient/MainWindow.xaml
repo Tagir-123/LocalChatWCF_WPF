@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatClient"
         mc:Ignorable="d"
-        Title="Messenger"  Height="500" MinHeight="400" MinWidth="800" Width="1000" Closing="Window_Closing" Style="{DynamicResource MyBack}">
+        Title="Мессенджер"  Height="500" 
+        MinHeight="400" MinWidth="800" 
+        Width="1000" Closing="Window_Closing" Icon="/IconChat.ico" Style="{DynamicResource MyBack}">
     <Grid>
         <Grid.ContextMenu>
             <ContextMenu>
-                <RadioButton Content="Тёмная тема" GroupName="Theme" Click="DarkTheme_Click"/>
-                <RadioButton Content="Светлая тема" GroupName="Theme" Click="LightTheme_Click"/>
-                <RadioButton Content="Цветная тема" GroupName="Theme" Click="ColorTheme_Click"/>
+                <RadioButton Content="Тёмная тема" 
+                             GroupName="Theme" 
+                             Click="DarkTheme_Click"/>
+                <RadioButton Content="Светлая тема" 
+                             GroupName="Theme" 
+                             Click="LightTheme_Click"/>
+                <RadioButton Content="Цветная тема" 
+                             GroupName="Theme" 
+                             Click="ColorTheme_Click"/>
             </ContextMenu>
         </Grid.ContextMenu>
         <Grid.RowDefinitions>
@@ -19,15 +27,45 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Button x:Name="button_Menu" Style="{StaticResource MyButtonOptions}" Width="40" Margin="5" Click="buttonMenu_Click" HorizontalAlignment="Left"/>
-        <TextBox x:Name="textbox_UserName" Tag="Впишите своё имя"  TextWrapping="Wrap" MaxWidth="300" Background="Transparent" Style="{DynamicResource MyTextBox}" HorizontalAlignment="Center"/>
-        <Button x:Name="button_ConnDicon" Click="bConnDicon_Click" Content="Подключиться" Style="{DynamicResource MyButton}" HorizontalAlignment="Right"/>
-        <Grid x:Name="grid_HidenMenu" Background="{DynamicResource First}" HorizontalAlignment="Left" Width="auto" Grid.Row="1" Visibility="Hidden"  VerticalAlignment="Top" Height="auto" Panel.ZIndex="1">
+        <Button x:Name="button_Menu" 
+                Style="{StaticResource MyButtonOptions}" 
+                Width="40" Margin="5" 
+                Click="buttonMenu_Click" 
+                HorizontalAlignment="Left"/>
+        <TextBox x:Name="textbox_UserName" 
+                 Tag="Впишите своё имя"  
+                 TextWrapping="Wrap" 
+                 MaxWidth="300" 
+                 Background="Transparent" 
+                 Style="{DynamicResource MyTextBox}" 
+                 HorizontalAlignment="Center"/>
+        <Button x:Name="button_ConnDicon" 
+                Click="bConnDicon_Click" 
+                Content="Подключиться" 
+                Style="{DynamicResource MyButton}" 
+                HorizontalAlignment="Right"/>
+        <Grid x:Name="grid_HidenMenu" 
+              Background="{DynamicResource First}" 
+              HorizontalAlignment="Left" 
+              Width="auto" Height="auto" 
+              Grid.Row="1" 
+              Visibility="Hidden"  
+              VerticalAlignment="Top"  Panel.ZIndex="1">
             <StackPanel Margin="5">
-                <Button x:Name="button_Guid" Content="Справочник" Style="{DynamicResource MyButtonMenu}" Click="buttonGuid_Click"/>
+                <Button x:Name="button_Guid" 
+                        Content="Справочник" 
+                        Style="{DynamicResource MyButtonMenu}" 
+                        Click="buttonGuid_Click"/>
             </StackPanel>
         </Grid>
-        <ListBox x:Name="listbox_Chat" Style="{DynamicResource MyListBox}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="textbox_Message" TextWrapping="WrapWithOverflow" KeyDown="tbMessage_KeyDown" Tag="Сообщение" Style="{DynamicResource MyTextBox}" Grid.Row="2" Height="50"/>
+        <ListBox x:Name="listbox_Chat" 
+                 Style="{DynamicResource MyListBox}" 
+                 Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="textbox_Message" 
+                 TextWrapping="WrapWithOverflow" 
+                 KeyDown="tbMessage_KeyDown" 
+                 Tag="Сообщение" 
+                 Style="{DynamicResource MyTextBox}" 
+                 Grid.Row="2" Height="50"/>
     </Grid>
 </Window>

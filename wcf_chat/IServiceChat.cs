@@ -12,12 +12,15 @@ namespace wcf_chat
     public interface IServiceChat
     {
         [OperationContract]
+        //метод для подключения к сервису
         int Connect(string name);
 
         [OperationContract]
+        //метод для сообщения сервису, что больше не нужно присылать ему сообщения
         void Disconnect(int id);
 
         [OperationContract(IsOneWay = true)]
+        //метод для отправки сообщений
         void SendMsg(string msg, int id);
 
     }
@@ -25,6 +28,7 @@ namespace wcf_chat
     public interface IServerChatCallback
     {
         [OperationContract(IsOneWay = true)]
+        //метод для обратного вызова, сообщения от сервера
         void MsgCallback(string msg);
     }
 }
