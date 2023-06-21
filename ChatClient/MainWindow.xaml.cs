@@ -1,6 +1,7 @@
 ﻿using ChatClient.ServiceChat;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ChatClient
@@ -24,10 +25,18 @@ namespace ChatClient
             if (!isConnected && (!string.IsNullOrEmpty(textbox_UserName.Text)))
             {
                 client = new ServiceChatClient(new System.ServiceModel.InstanceContext(this));
-                ID = client.Connect(textbox_UserName.Text);
-                textbox_UserName.IsEnabled = false;
-                button_ConnDicon.Content = "Отсоединится";
-                isConnected = true;
+                try
+                {
+                    ID = client.Connect(textbox_UserName.Text);
+                    textbox_UserName.IsEnabled = false;
+                    button_ConnDicon.Content = "Отсоединится";
+                    isConnected = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Запустите сервер, чтобы пользоваться чатом" , "Сервер не запущен", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                
             }
         }
 
@@ -100,13 +109,8 @@ namespace ChatClient
 
         private void buttonGuid_Click(object sender, RoutedEventArgs e)
         {
-            string text = "Здравствуй пользователь. Раз ты нажал на эту кнопку, значит ты хочешь узнать, как пользоваться приложением. " +
-                "\n1. Чтобы подключиться к серверу, надо сначала ввести имя пользователя. " +
-                "\n2. Чтобы вы смогли подключиться к серверу, вы должны нажать на кнопку \"Подключиться\". " +
-                "\n3. Чтобы подключение прошло успешно, должен быть включён сервер. " +
-                "\n4. Общаться можно с помощью пустого поля, где написано слово \"Сообщение\". " +
-                "\n5. Отправлять сообщения можно при помощи кнопки \"Enter\".";
-            MessageBox.Show(text);
+            GuideWindow guideWindow= new GuideWindow();
+            guideWindow.Show();
         }
 
         private void DarkTheme_Click(object sender, RoutedEventArgs e)

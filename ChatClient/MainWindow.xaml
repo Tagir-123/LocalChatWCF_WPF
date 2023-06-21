@@ -39,24 +39,18 @@
                  Background="Transparent" 
                  Style="{DynamicResource MyTextBox}" 
                  HorizontalAlignment="Center"/>
-        <Button x:Name="button_ConnDicon" 
-                Click="bConnDicon_Click" 
-                Content="Подключиться" 
-                Style="{DynamicResource MyButton}" 
-                HorizontalAlignment="Right"/>
+        <Button x:Name="button_ConnDicon" Click="bConnDicon_Click" Content="Подключиться" Style="{DynamicResource MyButton}" HorizontalAlignment="Right"/>
         <Grid x:Name="grid_HidenMenu" 
               Background="{DynamicResource First}" 
               HorizontalAlignment="Left" 
-              Width="auto" Height="auto" 
+              Width="145" Height="auto" 
               Grid.Row="1" 
               Visibility="Hidden"  
               VerticalAlignment="Top"  Panel.ZIndex="1">
-            <StackPanel Margin="5">
-                <Button x:Name="button_Guid" 
+            <Button x:Name="button_Guid" 
                         Content="Справочник" 
                         Style="{DynamicResource MyButtonMenu}" 
                         Click="buttonGuid_Click"/>
-            </StackPanel>
         </Grid>
         <ListBox x:Name="listbox_Chat" 
                  Style="{DynamicResource MyListBox}" 

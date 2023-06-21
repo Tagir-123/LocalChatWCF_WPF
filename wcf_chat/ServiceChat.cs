@@ -17,7 +17,7 @@ namespace wcf_chat
 
         public int Connect(string name)
         {
-            
+            var  isNameExists = users.Exists(x => x.Name == name); // Проверка пользователя
             ServerUser user = new ServerUser() {
                 ID = nextId,
                 Name = name,

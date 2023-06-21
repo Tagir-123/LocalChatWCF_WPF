@@ -1,0 +1,39 @@
+﻿<Window x:Class="ChatClient.GuideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        Title="Справочник" Height="550" Width="500">
+    <Grid>
+        <FlowDocumentReader Background="Aqua" HorizontalAlignment="Stretch">
+            <FlowDocument IsColumnWidthFlexible="True"  ColumnGap="10">
+                <Paragraph TextAlignment="Center" FontSize="20" >
+                    Здравствуй, пользователь. Раз ты нажал на эту кнопку, значит ты хочешь узнать, как пользоваться приложением.
+                </Paragraph>
+                <Paragraph>
+                    1. Чтобы подключиться к серверу, надо сначала ввести имя пользователя.
+                </Paragraph>
+                <Paragraph>
+                    2. Чтобы вы смогли подключиться к серверу, вы должны нажать на кнопку "Подключиться".
+                </Paragraph>
+                <Paragraph>
+                    3. Чтобы подключение прошло успешно, должен быть включён сервер. 
+                </Paragraph>
+                <Paragraph>
+                    4. Общаться можно с помощью пустого поля, где написано слово "Сообщение".
+                </Paragraph>
+                <Paragraph>
+                    5. Отправлять сообщения можно при помощи кнопки "Enter"
+                </Paragraph>
+                <Paragraph>
+                    6. Чтобы выйти из приложения надо нажать на кнопку "Отключиться"
+                </Paragraph>
+                <Paragraph>
+                    Чтобы закрыть это окно, просто нажмите на крестик.
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>
